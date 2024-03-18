@@ -1,0 +1,7 @@
+{
+  "name": "SIAP",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
