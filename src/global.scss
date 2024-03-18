@@ -28,3 +28,71 @@
 ion-content {
     --background: var(--ion-color-primary-contrast);
 }
+
+.reset {
+    padding: 0;
+    margin: 0;
+}
+
+
+// reset all
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.width-100p {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.margin-btm-5 {
+    margin-bottom: 5px;
+}
+
+.margin-btm-8 {
+    margin-bottom: 8px;
+}
+
+.margin-btm-13 {
+    margin-bottom: 13px;
+}
+
+.margin-btm-21 {
+    margin-bottom: 21px;
+}
+
+.margin-btm-34 {
+    margin-bottom: 34px;
+}
+
+.padding-btm-5 {
+    padding-bottom: 5px;
+}
+
+.padding-btm-8 {
+    padding-bottom: 8px;
+}
+
+.padding-btm-13 {
+    padding-bottom: 13px;
+}
+
+.padding-left-5 {
+    padding-left: 5px;
+}
+
+.padding-left-8 {
+    padding-left: 8px;
+}
+
+.padding-right-5 {
+    padding-right: 5px;
+}
+
+.padding-right-8 {
+    padding-right: 8px;
+}

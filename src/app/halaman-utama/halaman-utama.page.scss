@@ -1,22 +1,31 @@
 ion-toolbar {
-    --background: white; // Set the desired background color
-
-    // &::part(background) {
-    //     background-color: white; // Repeat the same color for the Shadow Part
-    // }
-
+    --background: white;
     color: black;
 }
 
-ion-header {
-    // --background: var(--ion-color-secondary);
-    --ion-background-color: chocolate;
-    border: 3px solid black;
+ion-searchbar {
+    --background: white;
+    --color: #fff;
+    // --placeholder-color: rgba(0, 0, 0, 1) !important;
+    --placeholder-opacity: 1;
+    --icon-color: rgba(89, 89, 89, 0.382);
+    --clear-button-color: black;
+
+    --border-radius: 4px;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+ion-grid {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 ion-button {
     color: black;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 ion-button::part(native) {
@@ -24,11 +33,20 @@ ion-button::part(native) {
 }
 
 #gender-selector {
+    position: relative;
+}
+
+#gender-selector::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
     border-bottom: 1px solid black;
 }
 
 #cabor-container {
-    border: 1px solid red;
+    // border: 1px solid red;
 }
 
 .cabor-item {
