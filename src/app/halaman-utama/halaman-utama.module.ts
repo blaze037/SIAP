@@ -8,6 +8,8 @@ import { HalamanUtamaPageRoutingModule } from './halaman-utama-routing.module';
 
 import { HalamanUtamaPage } from './halaman-utama.page';
 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { HalamanUtamaPage } from './halaman-utama.page';
     IonicModule,
     HalamanUtamaPageRoutingModule
   ],
-  declarations: [HalamanUtamaPage]
+  declarations: [HalamanUtamaPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HalamanUtamaPageModule {}

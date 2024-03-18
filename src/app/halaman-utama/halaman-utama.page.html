@@ -10,13 +10,15 @@
     <ion-row class="margin-btm-21">
       <!-- Carousel -->
       <ion-col>
-        <div name="dummyblock" style="height: 162px; background-color: antiquewhite; color: black;">
-          banner articles
-        </div>
+        <swiper-container [modules]="swiperModules" autoplay="true" allowTouchMove="true" style="height: 162px">
+          <swiper-slide>Slide 1</swiper-slide>
+          <swiper-slide>Slide 2</swiper-slide>
+          <swiper-slide>Slide 3</swiper-slide>
+        </swiper-container>
       </ion-col>
     </ion-row>
     
-    <ion-row id="gender-selector" class="width-100p margin-btm-21 padding-left-13 padding-right-13">
+    <ion-row id="gender-selector" class="width-100p margin-btm-21 padding-left-13 padding-right-13 padding-btm-13">
       <!-- Gender tab selector -->
       <ion-col size="2">
         <ion-button class="text-center">Pria</ion-button>
