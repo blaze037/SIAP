@@ -1,3 +1,40 @@
-ion-content {
-    background-color: var(--ion-color-primary-contrast);
+ion-toolbar {
+    --background: white; // Set the desired background color
+
+    // &::part(background) {
+    //     background-color: white; // Repeat the same color for the Shadow Part
+    // }
+
+    color: black;
+}
+
+ion-header {
+    // --background: var(--ion-color-secondary);
+    --ion-background-color: chocolate;
+    border: 3px solid black;
+}
+
+ion-button {
+    color: black;
+    border: 1px solid black;
+}
+
+ion-button::part(native) {
+    background-color: white;
+}
+
+#gender-selector {
+    border-bottom: 1px solid black;
+}
+
+#cabor-container {
+    border: 1px solid red;
+}
+
+.cabor-item {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    height: 125px;
+    // harus cari cara dapetin nilai width buat bikin kotak
 }
