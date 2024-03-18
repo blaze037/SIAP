@@ -32,8 +32,8 @@
 
     <ion-row>
       <ion-col>
-        <!--  -->
-        <ion-grid id="cabor-container">
+        <!-- Cabor list  -->
+        <!-- <ion-grid id="cabor-container">
           <ion-row>
             <ion-col size="4" class="cabor-item">cabor1</ion-col>
             <ion-col size="4" class="cabor-item">cabor2</ion-col>
@@ -45,7 +45,56 @@
             <ion-col size="4" class="cabor-item">cabor8</ion-col>
             <ion-col size="4" class="cabor-item">cabor9</ion-col>
           </ion-row>
+        </ion-grid> -->
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3" class="sport-item-wrapper margin-13">
+              <div class="sport-item-content">
+                <img src="assets/cabor_assets/swimming_logo.jpg" alt="Swimming">
+                <span class="sport-name">Swimming</span>
+              </div>
+            </ion-col>
+            <ion-col size="3" class="sport-item-wrapper margin-13">
+              <div class="sport-item-content">
+                <img src="assets/cabor_assets/excel_logo.jpg" alt="Excel">
+                <span class="sport-name">Excel</span>
+              </div>
+            </ion-col>
+            <ion-col size="3" class="sport-item-wrapper margin-13">
+              <div class="sport-item-content">
+                <img src="assets/cabor_assets/programming_logo.png" alt="Programming">
+                <span class="sport-name">Programming</span>
+              </div>
+            </ion-col>
+            <ion-col size="3" class="sport-item-wrapper margin-13">
+              <div class="sport-item-content">
+                <img src="assets/cabor_assets/running_logo.jpg" alt="Running">
+                <span class="sport-name">Running</span>
+              </div>
+            </ion-col>
+            <ion-col size="3" class="sport-item-wrapper margin-13">
+              <div class="sport-item-content">
+                <img src="assets/cabor_assets/gaming_logo.png" alt="gaming">
+                <span class="sport-name">Gaming</span>
+              </div>
+            </ion-col>
+          </ion-row>
         </ion-grid>
+
+        <!-- <div class="catalog-items">
+          <div class="catalog-item" *ngFor="let item of promos" (click)="navigateToDetailPromoPage(item.id)">
+            <img [src]="item.foto" alt="item.judul" class="catalog-item-image">
+            <div class="container-vertical">
+              <div class="catalog-detail-container">
+                <div class="catalog-item-title h-45">{{ item.judul }}</div>
+              </div>
+              <div class="catalog-aktif-container">
+                <div class="catalog-item-periode"><i style="font-size:0.7em">Aktif Sampai {{dateFormat(item.aktif_sampai)}}</i></div>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </ion-col>
     </ion-row>
   </ion-grid>

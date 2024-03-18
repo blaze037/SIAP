@@ -45,14 +45,34 @@ ion-button::part(native) {
     border-bottom: 1px solid black;
 }
 
-#cabor-container {
-    // border: 1px solid red;
+.sport-item-wrapper {
+    display: grid;
 }
 
-.cabor-item {
+.sport-item-content {
     background-color: white;
     color: black;
     border: 1px solid black;
-    height: 125px;
-    // harus cari cara dapetin nilai width buat bikin kotak
+    
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.sport-item-content img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.sport-name {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8em;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
