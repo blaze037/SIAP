@@ -116,3 +116,13 @@ ion-content {
 .padding-right-8 {
     padding-right: 8px;
 }
+
+.text-with-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-with-outline {
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+    text-stroke: 1px rgba(0, 0, 0, 0.5);
+    color: white;
+}

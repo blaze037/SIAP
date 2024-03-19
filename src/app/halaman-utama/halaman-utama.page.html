@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-searchbar search-icon="search-circle" animated="true" placeholder="SIAP" style="color: black;">
+    <ion-searchbar search-icon="search-circle" animated="true" placeholder="SIAP" style="">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -10,77 +10,64 @@
     <ion-row class="margin-btm-21">
       <!-- Carousel -->
       <ion-col>
-        <swiper-container [modules]="swiperModules" autoplay="true" allowTouchMove="true" style="height: 162px">
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
+        <swiper-container [modules]="swiperModules" autoplay="true" allowTouchMove="true" style="height: 162px" pagination="true">
+          <swiper-slide style="background-image: url(assets/cabor_assets/swimming_logo.jpg); background-size: cover; background-position: center;"></swiper-slide>
+          <swiper-slide style="background-image: url(assets/cabor_assets/gaming_logo.png); background-size: cover; background-position: center;"></swiper-slide>
+          <swiper-slide style="background-image: url(assets/cabor_assets/programming_logo.png); background-size: cover; background-position: center;"></swiper-slide>
         </swiper-container>
       </ion-col>
     </ion-row>
     
-    <ion-row id="gender-selector" class="width-100p margin-btm-21 padding-left-13 padding-right-13 padding-btm-13">
+    <ion-row id="category-selector" class="width-100p margin-btm-21 padding-left-13 padding-right-13 padding-btm-13">
       <!-- Gender tab selector -->
-      <ion-col size="2">
-        <ion-button class="text-center">Pria</ion-button>
+      <ion-col size="2" class="text-center selected">
+        <span>Atlit</span>
       </ion-col>
-      <ion-col size="2">
-        <div>
-          <ion-button class="text-center">Wanita</ion-button>
-        </div>
+      <ion-col size="2" class="text-center">
+        <span>Pelatih</span>
+      </ion-col>
+      <ion-col size="2" class="text-center">
+        <span>Wasit</span>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col>
-        <!-- Cabor list  -->
-        <!-- <ion-grid id="cabor-container">
-          <ion-row>
-            <ion-col size="4" class="cabor-item">cabor1</ion-col>
-            <ion-col size="4" class="cabor-item">cabor2</ion-col>
-            <ion-col size="4" class="cabor-item">cabor3</ion-col>
-            <ion-col size="4" class="cabor-item">cabor4</ion-col>
-            <ion-col size="4" class="cabor-item">cabor5</ion-col>
-            <ion-col size="4" class="cabor-item">cabor6</ion-col>
-            <ion-col size="4" class="cabor-item">cabor7</ion-col>
-            <ion-col size="4" class="cabor-item">cabor8</ion-col>
-            <ion-col size="4" class="cabor-item">cabor9</ion-col>
-          </ion-row>
-        </ion-grid> -->
-
-        <ion-grid>
-          <ion-row>
-            <ion-col size="3" class="sport-item-wrapper margin-13">
-              <div class="sport-item-content">
-                <img src="assets/cabor_assets/swimming_logo.jpg" alt="Swimming">
-                <span class="sport-name">Swimming</span>
-              </div>
-            </ion-col>
-            <ion-col size="3" class="sport-item-wrapper margin-13">
-              <div class="sport-item-content">
-                <img src="assets/cabor_assets/excel_logo.jpg" alt="Excel">
-                <span class="sport-name">Excel</span>
-              </div>
-            </ion-col>
-            <ion-col size="3" class="sport-item-wrapper margin-13">
-              <div class="sport-item-content">
-                <img src="assets/cabor_assets/programming_logo.png" alt="Programming">
-                <span class="sport-name">Programming</span>
-              </div>
-            </ion-col>
-            <ion-col size="3" class="sport-item-wrapper margin-13">
-              <div class="sport-item-content">
-                <img src="assets/cabor_assets/running_logo.jpg" alt="Running">
-                <span class="sport-name">Running</span>
-              </div>
-            </ion-col>
-            <ion-col size="3" class="sport-item-wrapper margin-13">
-              <div class="sport-item-content">
-                <img src="assets/cabor_assets/gaming_logo.png" alt="gaming">
-                <span class="sport-name">Gaming</span>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+        <div class="centered-container">   
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4" class="sport-item-wrapper">
+                <div class="sport-item-content image-box" style="background-image: url(assets/cabor_assets/swimming_logo.jpg);">
+                  <div class="text-center">
+                    <span class="sport-name">Swimming</span>
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col size="4" class="sport-item-wrapper">
+                <div class="sport-item-content image-box" style="background-image: url(assets/cabor_assets/excel_logo.jpg);">
+                  <span class="sport-name">Excel</span>
+                </div>
+              </ion-col>
+              <ion-col size="4" class="sport-item-wrapper">
+                <div class="sport-item-content image-box" style="background-image: url(assets/cabor_assets/programming_logo.png);">
+                  <span class="sport-name">Programming</span>
+                </div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="4" class="sport-item-wrapper">
+                <div class="sport-item-content image-box" style="background-image: url(assets/cabor_assets/running_logo.jpg);">
+                  <span class="sport-name">Running</span>
+                </div>
+              </ion-col>
+              <ion-col size="4" class="sport-item-wrapper">
+                <div class="sport-item-content image-box" style="background-image: url(assets/cabor_assets/gaming_logo.png);">
+                  <span class="sport-name">Gaming</span>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
 
         <!-- <div class="catalog-items">
           <div class="catalog-item" *ngFor="let item of promos" (click)="navigateToDetailPromoPage(item.id)">
