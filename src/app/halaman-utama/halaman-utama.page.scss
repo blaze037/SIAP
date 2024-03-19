@@ -34,7 +34,7 @@ ion-grid {
     bottom: 0;
     left: 8px;
     right: 8px;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
 }
 
 .centered-container ion-grid ion-row {
@@ -42,7 +42,9 @@ ion-grid {
 }
 
 .sport-item-wrapper {
-    padding: 13px;
+    padding: 8px;
+    // border: 1px black solid;
+    aspect-ratio: 1/1;
 }
 
 .sport-item-content {
@@ -53,19 +55,21 @@ ion-grid {
     display: flex;
     align-items: center;
     text-align: center;
+    width: 100%;
+    height: 80%;
 }
 
 .sport-item-content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-.sport-name {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: white;
-    position: relative;
+.sport-name-container {
+    width: 100%;
+    height: 20%;
+    // position: relative;
 }
 
 // #category-selector ion-row ion-col span {
@@ -81,19 +85,23 @@ ion-grid {
     font-weight: 500;
 }
 
-.image-box {
-    position: relative;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-}
+// .image-box {
+//     position: relative;
+//     width: 100%;
+//     background-size: cover;
+//     background-position: center;
+// }
 
-.image-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.382);
+// .image-box::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.382);
+// }
+
+.sport-list-image {
+    // border-bottom: 1px solid black;
 }

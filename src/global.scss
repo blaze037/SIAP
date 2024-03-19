@@ -126,3 +126,15 @@ ion-content {
     text-stroke: 1px rgba(0, 0, 0, 0.5);
     color: white;
 }
+
+.centering-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.container-shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
