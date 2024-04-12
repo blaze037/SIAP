@@ -8,19 +8,35 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'halaman-utama',
-        loadChildren: () => import('../halaman-utama/halaman-utama.module').then(m => m.HalamanUtamaPageModule)
+        path: 'beranda',
+        loadChildren: () => import('../beranda/beranda.module').then(m => m.BerandaPageModule)
+      },
+      {
+        path: 'olahraga',
+        loadChildren: () => import('../olahraga/olahraga.module').then(m => m.OlahragaPageModule)
+      },
+      {
+        path: 'pemuda',
+        loadChildren: () => import('../pemuda/pemuda.module').then(m => m.PemudaPageModule)
+      },
+      {
+        path: 'berita',
+        loadChildren: () => import('../berita/berita.module').then(m => m.BeritaPageModule)
+      },
+      {
+        path: 'kontak',
+        loadChildren: () => import('../kontak/kontak.module').then(m => m.KontakPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/halaman-utama',
+        redirectTo: '/tabs/beranda',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/halaman-utama',
+    redirectTo: '/tabs/beranda',
     pathMatch: 'full'
   }
 ];
