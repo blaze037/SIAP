@@ -5,91 +5,41 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-grid class="reset">
-    <ion-row class="margin-btm-21">
-      <!-- Carousel -->
-      <ion-col>
-        <swiper-container [modules]="swiperModules" autoplay="true" allowTouchMove="true" style="height: 162px" pagination="true">
-          <swiper-slide style="background-image: url(assets/cabor_assets/swimming_logo.jpg); background-size: cover; background-position: center;"></swiper-slide>
-          <swiper-slide style="background-image: url(assets/cabor_assets/gaming_logo.png); background-size: cover; background-position: center;"></swiper-slide>
-          <swiper-slide style="background-image: url(assets/cabor_assets/programming_logo.png); background-size: cover; background-position: center;"></swiper-slide>
-        </swiper-container>
-      </ion-col>
-    </ion-row>
-    
-    <ion-row id="category-selector" class="width-100p padding-left-13 padding-right-13 padding-btm-13">
-      <!-- Gender tab selector -->
-      <ion-col size="12" class="text-center selected">
-        <span>Olahraga</span>
-      </ion-col>
-      
-    </ion-row>
-
+  <ion-grid>
+    <swiper-container [modules]="swiperModules" autoplay="true" allowTouchMove="true" style="height: auto" pagination="true">
+      <swiper-slide *ngFor="let opt of banner" (click)="navigateTo('berita/'+opt['id'])">
+        <img src="{{imageurl('artikel/'+opt['id']+'.jpg?t='+opt['updated_at'])}}" style="width: 100%;">
+      </swiper-slide>
+      <!--swiper-slide style="background-image: url(assets/cabor_assets/programming_logo.png); background-size: cover; background-position: center;"></swiper-slide-->
+    </swiper-container>
+    <div style="padding:10px;margin-top:1em">
+      <b>Cabang Olahraga</b>
+      <a href="javascript:void(0)" (click)="navigateTo('olahraga')" style="float:right;text-decoration: none;color:darkblue;font-size:0.8em">Lihat Semua</a>
+    </div>
     <ion-row>
-      <ion-col>
-        <div class="centered-container">   
-          <ion-grid>
-            <ion-row>
-              <ion-col size="4" class="sport-item-wrapper container-shadow">
-                <div class="sport-item-content">
-                  <img class="sport-list-image" src="assets/cabor_assets/swimming_logo.jpg" alt="Swimming">
-                </div>
-                <div class="centering-container sport-name-container">
-                  <span>Swimming</span>
-                </div>
-              </ion-col>
-              <ion-col size="4" class="sport-item-wrapper container-shadow">
-                <div class="sport-item-content">
-                  <img class="sport-list-image" src="assets/cabor_assets/excel_logo.jpg" alt="Excel">
-                </div>
-                <div class="centering-container sport-name-container">
-                  <span>Excel</span>
-                </div>
-              </ion-col>
-              <ion-col size="4" class="sport-item-wrapper container-shadow">
-                <div class="sport-item-content">
-                  <img class="sport-list-image" src="assets/cabor_assets/programming_logo.png" alt="Programming">
-                </div>
-                <div class="centering-container sport-name-container">
-                  <span>Programming</span>
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="4" class="sport-item-wrapper container-shadow">
-                <div class="sport-item-content">
-                  <img class="sport-list-image" src="assets/cabor_assets/running_logo.jpg" alt="Running">
-                </div>
-                <div class="centering-container sport-name-container">
-                  <span>Running</span>
-                </div>
-              </ion-col>
-              <ion-col size="4" class="sport-item-wrapper container-shadow">
-                <div class="sport-item-content">
-                  <img class="sport-list-image" src="assets/cabor_assets/gaming_logo.png" alt="Gaming">
-                </div>
-                <div class="centering-container sport-name-container">
-                  <span>Gaming</span>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
+      <ion-col size="4" class="sport-item-wrapper container-shadow" *ngFor="let opt of cabor" (click)="navigateTo('olahraga/'+opt['cabor'])">
+        <div class="sport-item-content">
+          <img class="sport-list-image" src="{{imageurl('cabor/'+opt['id']+'.jpg?t='+opt['updated_at'])}}" alt="{{opt['cabor']}}">
         </div>
-
-        <!-- <div class="catalog-items">
-          <div class="catalog-item" *ngFor="let item of promos" (click)="navigateToDetailPromoPage(item.id)">
-            <img [src]="item.foto" alt="item.judul" class="catalog-item-image">
-            <div class="container-vertical">
-              <div class="catalog-detail-container">
-                <div class="catalog-item-title h-45">{{ item.judul }}</div>
-              </div>
-              <div class="catalog-aktif-container">
-                <div class="catalog-item-periode"><i style="font-size:0.7em">Aktif Sampai {{dateFormat(item.aktif_sampai)}}</i></div>
-              </div>
-            </div>
-          </div>
-        </div> -->
+        <div class="centering-container sport-name-container">
+          <span>{{opt['cabor']}}</span>
+        </div>
       </ion-col>
     </ion-row>
+    <div style="padding:10px;margin-top:1em">
+      <b>Bidang Pemuda</b>
+      <a href="javascript:void(0)" (click)="navigateTo('pemuda')" style="float:right;text-decoration: none;color:darkblue;font-size:0.8em">Lihat Semua</a>
+    </div>
+    <ion-row>
+      <ion-col size="4" class="sport-item-wrapper container-shadow" *ngFor="let opt of bidang" (click)="navigateTo('pemuda/'+opt['bidang'])">
+        <div class="sport-item-content">
+          <img class="sport-list-image" src="{{imageurl('bidang/'+opt['id']+'.jpg?t='+opt['updated_at'])}}" alt="{{opt['bidang']}}">
+        </div>
+        <div class="centering-container sport-name-container">
+          <span>{{opt['bidang']}}</span>
+        </div>
+      </ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

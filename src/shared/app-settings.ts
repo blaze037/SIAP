@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 export class AppSettings {
   public static API_URL = 'https://project.cydev.biz.id/siap/api/';
+  public static IMAGE_URL = 'https://project.cydev.biz.id/siap/img/';
   private static HTTP_XAPPS = 'siap-app';
   private static HTTP_XBEARER = '%9dk3@(%gkFSNsjdasjsd@%9Rasjsd#$%^as&^haT@';
   public static APP_URL = '';
@@ -12,7 +13,7 @@ export class AppSettings {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       'XAPPS' : this.HTTP_XAPPS,
-      'XTOKEN' : this.HTTP_XBEARER
+      'XBEARER' : this.HTTP_XBEARER
       })
   };
   public static httpOptionsUser(member:string,token:string){
@@ -20,7 +21,7 @@ export class AppSettings {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
         'XAPPS' : this.HTTP_XAPPS,
-        'XTOKEN' : this.HTTP_XBEARER,
+        'XBEARER' : this.HTTP_XBEARER,
         'APP_MEMBER' : member,
         'APP_XTOKEN': token
         })

@@ -6,10 +6,10 @@ import { LoadingHandler } from 'src/shared/loading-handler';
 
 @Component({
   selector: 'app-berita',
-  templateUrl: './berita.page.html',
+  templateUrl: './beritadetail.page.html',
   styleUrls: ['./berita.page.scss'],
 })
-export class BeritaPage {
+export class BeritaDetailPage {
   items :any=[];
   page=1;
   keyword="";
@@ -17,24 +17,11 @@ export class BeritaPage {
   constructor(private navCtrl: NavController,
     private http: HttpClient,
     private loadingHandler : LoadingHandler,) {
-      this.page=1;
-      this.items=[];
-      this.getData();
+      this.cariData();  
   }
-  cariData(event:any){
-    if(event.keyCode==13){
-      this.page=1;
-      this.items=[];
-      this.getData();
-    }
-  }
-  handleRefresh(event:any) {
+  cariData(){
     this.page=1;
-    this.items=[];
     this.getData();
-    setTimeout(() => {
-      event.target.complete();
-    }, 100);
   }
   doInfinite(infiniteScroll:any) {
     setTimeout(() => {
