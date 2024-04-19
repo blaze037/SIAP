@@ -23,6 +23,7 @@ export class BeritaPage {
   }
   cariData(event:any){
     if(event.keyCode==13){
+      this.state=1;
       this.page=1;
       this.items=[];
       this.getData();

@@ -22,15 +22,15 @@ export class BerandaPage {
   constructor(private navCtrl: NavController,
     private http: HttpClient,
     private loadingHandler : LoadingHandler,) { 
-      this.loadingHandler.show();
+      //this.loadingHandler.show();
       this.http.get(AppSettings.API_URL + 'beranda', AppSettings.httpOptions).subscribe((data: any) => {
         this.cabor = data.cabor;
         this.bidang = data.bidang;
         this.banner = data.banner;
-        this.loadingHandler.hide();
+        //this.loadingHandler.hide();
       },(error) => {
         console.error(error);
-        this.loadingHandler.hide();
+        //this.loadingHandler.hide();
       });
       setTimeout(()=>{
         //OneSignal.Debug.setLogLevel(6);

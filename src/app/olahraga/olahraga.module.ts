@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { OlahragaPageRoutingModule } from './olahraga-routing.module';
 
 import { OlahragaPage } from './olahraga.page';
+import { OlahragaDetailPage } from './olahragadetail.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { OlahragaPage } from './olahraga.page';
     IonicModule,
     OlahragaPageRoutingModule
   ],
-  declarations: [OlahragaPage]
+  declarations: [OlahragaPage,OlahragaDetailPage]
 })
 export class OlahragaPageModule {}

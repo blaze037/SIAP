@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { BeritaPageRoutingModule } from './berita-routing.module';
 
 import { BeritaPage } from './berita.page';
+import { BeritaDetailPage } from './beritadetail.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { BeritaPage } from './berita.page';
     IonicModule,
     BeritaPageRoutingModule
   ],
-  declarations: [BeritaPage]
+  declarations: [BeritaPage,BeritaDetailPage]
 })
 export class BeritaPageModule {}

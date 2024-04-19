@@ -1,29 +1,15 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title>&nbsp;<ion-icon name="chevron-back-outline"></ion-icon>&nbsp;{{judul}}</ion-title>
+      <ion-title>&nbsp;<ion-icon name="chevron-back-outline"></ion-icon>&nbsp;Detail Berita</ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-content>
-    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-    <ion-searchbar [(ngModel)]="keyword" (keypress)="cariData($event)"></ion-searchbar>
-    <ion-list>
-      <div *ngFor="let row of items">
-      <ion-item [routerLink]="[row.id]">
-          <ion-thumbnail slot="start">
-              <img src="{{imageurl('artikel/'+row.id+'.jpg?t='+row.updated_at)}}">
-          </ion-thumbnail>
-          <ion-label style="padding-left:1em">
-              <h3 style="font-weight: bold;">{{row.judul}}</h3>
-              <p [innerHTML]="row.isi.substr(0, 100)"></p>
-          </ion-label>
-      </ion-item>
-      </div>
-      <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-          <ion-infinite-scroll-content></ion-infinite-scroll-content>
-      </ion-infinite-scroll>
-  </ion-list> 
+    
+    <img src="{{imageurl('artikel/'+data.id+'.jpg?t='+data.updated_at)}}">
+    <div style="padding:0 1em">
+      <h3 style="font-weight: bold;">{{data.judul}}</h3>
+      <p [innerHTML]="data.isi"></p>
+    </div>
   </ion-content>
   

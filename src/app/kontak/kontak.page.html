@@ -1,13 +1,51 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>kontak</ion-title>
+    <ion-title>&nbsp;&nbsp;<img src="assets/icon.png" style="height:1em"> Kontak</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">kontak</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d837.6222769452985!2d104.74042246307312!3d-2.9793296013366324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b75e656a9e86f%3A0x2e254d5c5d9cbfca!2sDinas%20Pemuda%20Dan%20Olahraga%20Provinsi%20Sumatera%20Selatan!5e0!3m2!1sid!2sid!4v1713424531459!5m2!1sid!2sid" height="250" style="border:0;width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <ion-list>
+    <a href="{{data['Alamat'].link}}" target="_system" style="text-decoration: none; color: black;">
+    <ion-item>
+      <ion-label style="padding-left:1em">
+        <h3 style="font-weight: bold;">Alamat</h3>
+        <p>{{data['Alamat'].text}}</p>
+      </ion-label>
+    </ion-item>
+    </a>
+    <a href="{{data['Telepon'].link}}" target="_system" style="text-decoration: none; color: black;">
+    <ion-item>
+      <ion-label style="padding-left:1em">
+        <h3 style="font-weight: bold;">Telepon</h3>
+        <p>{{data['Telepon'].text}}</p>
+      </ion-label>
+    </ion-item>
+    </a>
+    <a href="{{data['Website'].link}}" target="_system" style="text-decoration: none; color: black;">
+    <ion-item>
+      <ion-label style="padding-left:1em">
+        <h3 style="font-weight: bold;">Website</h3>
+        <p>{{data['Website'].text}}</p>
+      </ion-label>
+    </ion-item>
+    </a>
+    <a href="{{data['Instagram'].link}}" target="_system" style="text-decoration: none; color: black;">
+    <ion-item>
+      <ion-label style="padding-left:1em">
+        <h3 style="font-weight: bold;">Instagram</h3>
+        <p>{{data['Instagram'].text}}</p>
+      </ion-label>
+    </ion-item>
+    </a>
+    <a href="{{data['Facebook'].link}}" target="_system" style="text-decoration: none; color: black;">
+    <ion-item>
+      <ion-label style="padding-left:1em">
+        <h3 style="font-weight: bold;">Facebook</h3>
+        <p>{{data['Facebook'].text}}</p>
+      </ion-label>
+    </ion-item>
+    </a>
+  </ion-list>
 </ion-content>
