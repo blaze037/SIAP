@@ -17,7 +17,7 @@ export class BerandaPage {
   
   
   cabor:any=[];
-  bidang:any=[];
+  pemuda:any=[];
   banner:any=[];
   constructor(private navCtrl: NavController,
     private http: HttpClient,
@@ -25,7 +25,7 @@ export class BerandaPage {
       //this.loadingHandler.show();
       this.http.get(AppSettings.API_URL + 'beranda', AppSettings.httpOptions).subscribe((data: any) => {
         this.cabor = data.cabor;
-        this.bidang = data.bidang;
+        this.pemuda = data.pemuda;
         this.banner = data.banner;
         //this.loadingHandler.hide();
       },(error) => {
@@ -34,6 +34,7 @@ export class BerandaPage {
       });
       setTimeout(()=>{
         //OneSignal.Debug.setLogLevel(6);
+        try{
         OneSignal.initialize("a93f0baf-a4d4-422e-8fcf-d5cb8eb21471");
         let myClickListener = async function(event:any) {
           let notificationData = JSON.stringify(event);
@@ -42,6 +43,9 @@ export class BerandaPage {
         OneSignal.Notifications.requestPermission(true).then((accepted: boolean) => {
           console.log("User accepted notifications: " + accepted);
         });
+        }catch(ex){
+          console.log(ex);
+        }
         //OneSignal.User.addTags({member: this.profile?.id+""});
       },1000);
   }

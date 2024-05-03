@@ -1,41 +1,25 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>&nbsp;&nbsp;<img src="assets/icon.png" style="height:1em"> Pemuda</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-searchbar [(ngModel)]="cari.keyword" (click)="searchstate=1"></ion-searchbar>
-  <ion-row>
-    <ion-col size="4" class="sport-item-wrapper container-shadow" *ngFor="let opt of bidang" (click)="navigateTo('pemuda/'+opt['bidang'])">
-      <div class="sport-item-content">
-        <img class="sport-list-image" src="{{imageurl('bidang/'+opt['id']+'.jpg?t='+opt['updated_at'])}}" alt="{{opt['bidang']}}">
-      </div>
-      <div class="centering-container sport-name-container">
-        <span>{{opt['bidang']}}</span>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-content>
-<div id="backdrop" *ngIf="searchstate" (click)="searchstate=0"></div>
-<div class="dialog" *ngIf="searchstate">
-  <ion-item>
-    Pencarian
-    <a (click)="searchstate=0"slot="end">x</a>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Pencarian</ion-label>
-    <ion-input [(ngModel)]="cari.keyword"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="stacked">Bidang Pemuda</ion-label>
-    <ion-select [(ngModel)]="cari.bidang">
-      <ion-select-option>Semua</ion-select-option>
-      <ion-select-option *ngFor="let opt of bidang">{{opt.bidang}}</ion-select-option>
-    </ion-select>
-  </ion-item>
+    <ion-toolbar>
+      <ion-title>&nbsp;&nbsp;<img src="assets/icon.png" style="height:1em"> Pemuda</ion-title>
+    </ion-toolbar>
+  </ion-header>
   
-  <ion-item>
-    <ion-button (click)="cariData()">Cari</ion-button>
-  </ion-item>
-</div>
+  <ion-content [fullscreen]="true">
+    <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-searchbar [(ngModel)]="cari.keyword" (keypress)="cariData($event)"></ion-searchbar>
+    <ion-list>
+        <div *ngFor="let row of items" style="padding:0 1em 1em 1em;">
+        <img src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}">
+        <h3 style="font-weight: bold;">{{row.nama}}</h3>
+        <p>
+            Lokasi : {{row.kelurahan}}, {{row.kecamatan}}, {{row.kab_kota}}
+        </p>
+        <hr>
+        </div>
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+            <ion-infinite-scroll-content></ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ion-list> 
+  </ion-content>

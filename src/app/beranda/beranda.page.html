@@ -27,16 +27,16 @@
       </ion-col>
     </ion-row>
     <div style="padding:10px;margin-top:1em">
-      <b>Bidang Pemuda</b>
+      <b>Pemuda Berprestasi</b>
       <a href="javascript:void(0)" (click)="navigateTo('pemuda')" style="float:right;text-decoration: none;color:darkblue;font-size:0.8em">Lihat Semua</a>
     </div>
     <ion-row>
-      <ion-col size="4" class="sport-item-wrapper container-shadow" *ngFor="let opt of bidang" (click)="navigateTo('pemuda/'+opt['bidang'])">
+      <ion-col size="6" class="sport-item-wrapper container-shadow" *ngFor="let row of pemuda">
         <div class="sport-item-content">
-          <img class="sport-list-image" src="{{imageurl('bidang/'+opt['id']+'.jpg?t='+opt['updated_at'])}}" alt="{{opt['bidang']}}">
+          <img class="sport-list-image" src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}" alt="{{row.nama}}">
         </div>
         <div class="centering-container sport-name-container">
-          <span>{{opt['bidang']}}</span>
+          <span>{{row.nama}}</span>
         </div>
       </ion-col>
     </ion-row>

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { PemudaPageRoutingModule } from './pemuda-routing.module';
 
 import { PemudaPage } from './pemuda.page';
-import { PemudaDetailPage } from './pemudadetail.page';
 
 @NgModule({
   imports: [
@@ -16,6 +15,6 @@ import { PemudaDetailPage } from './pemudadetail.page';
     IonicModule,
     PemudaPageRoutingModule
   ],
-  declarations: [PemudaPage,PemudaDetailPage]
+  declarations: [PemudaPage]
 })
 export class PemudaPageModule {}

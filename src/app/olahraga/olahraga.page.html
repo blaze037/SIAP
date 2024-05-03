@@ -24,18 +24,18 @@
     <a (click)="searchstate=0"slot="end">x</a>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Pencarian</ion-label>
-    <ion-input [(ngModel)]="cari.keyword"></ion-input>
+    <ion-label>Nama</ion-label>
+    <ion-input [(ngModel)]="cari.keyword" style="text-align: right;"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Olahraga</ion-label>
+    <ion-label>Olahraga</ion-label>
     <ion-select [(ngModel)]="cari.cabor">
       <ion-select-option>Semua</ion-select-option>
       <ion-select-option *ngFor="let opt of cabor">{{opt.cabor}}</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
-    <ion-label position="stacked">Kategori</ion-label>
+    <ion-label>Kategori</ion-label>
     <ion-select [(ngModel)]="cari.kategori">
       <ion-select-option>Semua</ion-select-option>
       <ion-select-option>Atlet</ion-select-option>
