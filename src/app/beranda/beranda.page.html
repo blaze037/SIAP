@@ -31,9 +31,9 @@
       <a href="javascript:void(0)" (click)="navigateTo('pemuda')" style="float:right;text-decoration: none;color:darkblue;font-size:0.8em">Lihat Semua</a>
     </div>
     <ion-row>
-      <ion-col size="6" class="sport-item-wrapper container-shadow" *ngFor="let row of pemuda">
+      <ion-col size="4" class="sport-item-wrapper container-shadow" *ngFor="let row of pemuda">
         <div class="sport-item-content">
-          <img class="sport-list-image" src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}" alt="{{row.nama}}">
+          <img class="sport-list-image" src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}"  onError="src='assets/user.png'">
         </div>
         <div class="centering-container sport-name-container">
           <span>{{row.nama}}</span>

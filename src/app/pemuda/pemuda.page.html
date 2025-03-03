@@ -10,11 +10,11 @@
     </ion-refresher>
     <ion-searchbar [(ngModel)]="cari.keyword" (keypress)="cariData($event)"></ion-searchbar>
     <ion-list>
-        <div *ngFor="let row of items" style="padding:0 1em 1em 1em;">
-        <img src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}">
+        <div *ngFor="let row of items" style="padding:0 1em 1em 1em;" align="center">
+        <img src="{{imageurl('pemuda/'+row.id+'.jpg?t='+row.updated_at)}}" onError="src='assets/user.png'">
         <h3 style="font-weight: bold;">{{row.nama}}</h3>
         <p>
-            Lokasi : {{row.kelurahan}}, {{row.kecamatan}}, {{row.kab_kota}}
+            Lokasi : {{row.kab_kota}}
         </p>
         <hr>
         </div>

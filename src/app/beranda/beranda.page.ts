@@ -5,6 +5,7 @@ import { IonicSlides } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { AppSettings } from 'src/shared/app-settings';
 import { LoadingHandler } from 'src/shared/loading-handler';
+import { IonRouterOutlet, Platform } from '@ionic/angular';
 import OneSignal from 'onesignal-cordova-plugin';
 register();
 @Component({
@@ -21,7 +22,9 @@ export class BerandaPage {
   banner:any=[];
   constructor(private navCtrl: NavController,
     private http: HttpClient,
-    private loadingHandler : LoadingHandler,) { 
+    private loadingHandler : LoadingHandler,
+    private platform: Platform,
+    private routerOutlet: IonRouterOutlet) { 
       //this.loadingHandler.show();
       this.http.get(AppSettings.API_URL + 'beranda', AppSettings.httpOptions).subscribe((data: any) => {
         this.cabor = data.cabor;
@@ -48,6 +51,11 @@ export class BerandaPage {
         }
         //OneSignal.User.addTags({member: this.profile?.id+""});
       },1000);
+      this.platform.backButton.subscribeWithPriority(-1, () => {
+        if (!this.routerOutlet.canGoBack()) {
+          (navigator as any).app.exitApp();
+        }
+      });
   }
 
   

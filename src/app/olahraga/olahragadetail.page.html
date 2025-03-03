@@ -10,15 +10,15 @@
     </ion-refresher>
     <ion-searchbar [(ngModel)]="cari.keyword" (click)="searchstate=1"></ion-searchbar>
     <ion-list>
-        <div *ngFor="let row of items" style="padding:0 1em 1em 1em;">
-        <img src="{{imageurl('olahraga/'+row.id+'.jpg?t='+row.updated_at)}}">
+        <div *ngFor="let row of items" style="padding:0 1em 1em 1em;" align="center">
+        <img src="{{imageurl('olahraga/'+row.id+'.jpg?t='+row.updated_at)}}" onError="src='assets/user.png'">
         <h3 style="font-weight: bold;">{{row.nama}}</h3>
-        <p>
+        <p align="left">
             Cabor : {{row.cabor}}<br>
             Kategori : {{row.kategori}}<br>
             Lokasi : {{row.kelurahan}}, {{row.kecamatan}}, {{row.kab_kota}}
         </p>
-        <hr>
+        <div style="margin:5px 0px;height: 1px;background: #ccc;"></div>
         </div>
         <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
             <ion-infinite-scroll-content></ion-infinite-scroll-content>
